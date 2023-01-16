@@ -31,4 +31,4 @@ jobs:
 
       - name: Move downloaded artifaact before post checkout begins
         run: |
-          move /home/abdal/actions-runner/_work/github-actions-training/github-actions-training/output-log-file-updated.zip /tmp/
+          mv /home/abdal/actions-runner/_work/github-actions-training/github-actions-training/output-log-file-updated.zip /tmp/
