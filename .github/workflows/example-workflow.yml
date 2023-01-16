@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   run-custom-action: # name of the job
-    runs-on: centos8-runner
+    runs-on: self-hosted
     steps: # job steps
       - name: Checkout repo
         uses: actions/checkout@v3
