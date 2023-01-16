@@ -7,5 +7,5 @@ jobs:
     runs-on: ubuntu-latest
     steps: # job steps
       - name: Run custom bash script
-        run: .github/scripts/build.sh
+        run: ./.github/scripts/build.sh
         shell: bash
