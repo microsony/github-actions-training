@@ -1,0 +1,10 @@
+name: Running custom actions
+
+on: [push]
+
+jobs:
+  run-custom-action: # name of the job
+    steps: # job steps
+      - name: Run custom bash script
+        run: ./.github/scripts/build.sh
+        shell: bash
