@@ -28,7 +28,4 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: output-log-file-updated
-
-      - name: Move downloaded artifaact before post checkout begins
-        run: |
-          mv /home/abdal/actions-runner/_work/github-actions-training/github-actions-training/output-log-file-updated.zip /tmp/
+          path: /tmp/
