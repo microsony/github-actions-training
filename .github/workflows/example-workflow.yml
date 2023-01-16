@@ -12,3 +12,14 @@ jobs:
       - name: Run custom bash script
         run: ./.github/scripts/build.sh
         shell: bash
+        
+      - name: Save output of a file
+        shell: bash
+        run: |
+          expr 1 + 1 > output.log
+          
+      - name: Upload output file to store them on github artifacts
+        uses: actions/upload-artifact@v3
+        with:
+          name: output-log-file
+          path: output.log
