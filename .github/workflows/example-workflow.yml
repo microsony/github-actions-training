@@ -5,6 +5,9 @@ on: [push]
 jobs:
   run-custom-action: # name of the job
     runs-on: centos8-runner
+    env:
+      MY_ENV_VAR: ${{ kurri }}
+      
     steps: # job steps
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -29,3 +32,7 @@ jobs:
         with:
           name: output-log-file-updated
           path: /tmp/
+          
+      - name: Print $MY_ENV_VAR
+        shell: bash
+        run: echo $MY_ENV_VAR
