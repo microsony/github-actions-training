@@ -1,12 +1,12 @@
 name: Running custom actions
+env:
+  MY_ENV_VAR: ${{ kurri }}
 
 on: [push]
 
 jobs:
   run-custom-action: # name of the job
     runs-on: centos8-runner
-    env:
-      MY_ENV_VAR: ${{ kurri }}
       
     steps: # job steps
       - name: Checkout repo
