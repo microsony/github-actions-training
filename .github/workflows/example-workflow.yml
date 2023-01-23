@@ -19,7 +19,7 @@ jobs:
           First_Name: Mona
           
       - name: Access env variables using the env context
-        if: ${{ env.DAY_OF_WEEK == 'Monday' }}
+        if: ${{ env.DAY_OF_WEEK != 'Monday' }}
         run: echo "$Greeting $First_Name. Today is $DAY_OF_WEEK"
         env:
           First_Name: Mona
