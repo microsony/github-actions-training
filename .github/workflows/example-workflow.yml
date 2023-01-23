@@ -2,31 +2,16 @@ name: Running custom actions
 
 on: [push]
 
+env: 
+  DAY_OF_WEEK: Monday
+
 jobs:
-  run-custom-action: # name of the job
+  greeting_job: # name of the job
     runs-on: centos8-runner
+    
+    env:
+      Greeting: Hello
       
-    steps: # job steps
-      - name: Checkout repo
-        uses: actions/checkout@v3
-      
-      - name: Run custom bash script
-        run: ./.github/scripts/build.sh
-        shell: bash
-        
-      - name: Save output of a file
-        shell: bash
-        run: |
-          expr 2 + 2 > output.log
-          
-      - name: Upload output file to store them on github artifacts
-        uses: actions/upload-artifact@v3
-        with:
-          name: output-log-file-updated
-          path: output.log
-          
-      - name: Now download artifact stored on github to the runner
-        uses: actions/download-artifact@v3
-        with:
-          name: output-log-file-updated
-          path: /tmp/
+    steps:
+      - name: "Say hello Monda it's monday"
+        run: echo "$Greeting. Today is $DAY_OF_WEEK"
