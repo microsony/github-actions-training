@@ -1,6 +1,4 @@
 name: Running custom actions
-env:
-  MY_ENV_VAR: ${{ kurri }}
 
 on: [push]
 
@@ -32,7 +30,3 @@ jobs:
         with:
           name: output-log-file-updated
           path: /tmp/
-          
-      - name: Print $MY_ENV_VAR
-        shell: bash
-        run: echo $MY_ENV_VAR
