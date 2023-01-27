@@ -1,0 +1,15 @@
+name: Run custom bash script
+run-name: ${{ github.actor }} is running custom Github action
+
+on: [push]
+
+jobs:
+  run-custom-script:
+    runs-on: centos8-runner
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v3   
+     
+      - name: Run custom bash script
+        run: ./.github/scripts/build.sh
+        shell: bash
