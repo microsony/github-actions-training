@@ -5,7 +5,7 @@ on: [push]
 
 jobs:
   run-custom-script:
-    runs-on: centos8-runner
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v3   
